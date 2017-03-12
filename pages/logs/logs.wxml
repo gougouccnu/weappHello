@@ -6,6 +6,8 @@
 
   <view class="page-section-ctn">
         <image class="image" src="{{selectedItemPicUrl}}"/>
-  </view>  
-
+        <text class="text-title">{{itemTitle}}</text>
+        <text class="text-price">{{itemPrice}}</text>
+        <text class="text-haulage">{{itemHaulage}}</text>
+  </view>
 </view>

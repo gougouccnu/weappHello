@@ -6,3 +6,21 @@
 .log-item {
   margin: 10rpx;
 }
+.text-title {
+  font-size: 30rpx;
+  color: #353535;
+  line-height: 2em;
+  display: flex;
+}
+.text-price {
+  font-size: 30rpx;
+  color: #353535;
+  line-height: 2em;
+  display: flex;
+}
+.text-haulage {
+  font-size: 30rpx;
+  color: #353535;
+  line-height: 2em;
+  display: flex;
+}
