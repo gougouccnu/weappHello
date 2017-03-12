@@ -24,3 +24,8 @@
   line-height: 2em;
   display: flex;
 }
+
+.container-foot {
+  display: flex;
+  flex-direction: row;
+}

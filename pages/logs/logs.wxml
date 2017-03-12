@@ -1,5 +1,5 @@
 <!--logs.wxml-->
-<view class="container log-list">
+<view class="log-list">
   <block wx:for="{{logs}}" wx:for-item="log">
     <text class="log-item">{{index + 1}}. {{log}}</text>
   </block>
@@ -9,5 +9,10 @@
         <text class="text-title">{{itemTitle}}</text>
         <text class="text-price">{{itemPrice}}</text>
         <text class="text-haulage">{{itemHaulage}}</text>
+  </view>
+
+  <view class="container-foot">
+    <button bindtap="add">加入购物车</button>
+    <button bindtap="buy">立即购买</button>
   </view>
 </view>

@@ -1,5 +1,6 @@
 //logs.js
 var util = require('../../utils/util.js')
+var selectedItemIndex
 Page({
   data: {
     logs: [],
@@ -8,6 +9,16 @@ Page({
     itemPrice: "57元",
     itemHaulage: "运费：23元"
   },
+  add: function() {
+    wx.navigateTo({
+      url: '../index/index'
+    })
+  },
+  buy: function() {
+    wx.navigateTo({
+      url: '../order/order'
+    })
+  }, 
   onLoad: function () {
     selectedItemIndex = wx.getStorageSync('selectedItemIndex')
     this.setData({
@@ -18,9 +29,5 @@ Page({
       }),
       selectedItemPicUrl: "../../resources/pic/" + selectedItemIndex + ".jpg"
     })
-  },
-  onShow: function() {
-
-
-  }      
+  }   
 })
