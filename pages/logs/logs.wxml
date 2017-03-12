@@ -3,4 +3,9 @@
   <block wx:for="{{logs}}" wx:for-item="log">
     <text class="log-item">{{index + 1}}. {{log}}</text>
   </block>
+
+  <view class="page-section-ctn">
+        <image class="image" src="{{selectedItemPicUrl}}"/>
+  </view>  
+
 </view>
