@@ -1,2 +1,25 @@
 <!--pages/buyone/buyone.wxml-->
-<text>pages/buyone/buyone.wxml</text>
+<view class="container">
+
+<view class="address-box">
+    <view class="">
+        <text class="text-name">lishaowei</text>
+        <text class="text-phone">18926418053</text>
+    </view>
+    <text class="">hubei shen wuhan shi</text>
+
+    <view class="box">
+        <text class="box-text">在线支付</text>
+        <image class="box-arrow"src="src"></image>>
+    </view>
+
+    <view class="box">
+        <text class="box-text">优惠券</text>
+        <text class="text-right">暂无可用优惠券</text>
+    </view>
+
+
+
+</view>
+
+</view>

@@ -1,1 +1,18 @@
-/* pages/buyone/buyone.wxss */
+.box {
+  display: flex;
+  flex-direction: row;
+  background-color: #653535;
+  margin: 20rpx 0;
+}
+
+.box-arrow {
+  width: 64rpx;
+  height: 64rpx;
+  margin: 20rpx;
+}
+
+.box-text {
+  flex: 1;
+  margin: 20rpx;
+  color: #aaa;
+}

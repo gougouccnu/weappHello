@@ -1,33 +1,33 @@
 <view class=".container">
     <view class="userinfo">
-        <text class="userinfo-text">头像</text>
-        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+        <text class="box-text">头像</text>
+        <image class="box-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
     </view>
 
     <view class="">
-        <view class="userinfo">
-            <text class="userinfo-text">昵称</text>
-            <text class="userinfo-text">{{userInfo.nickName}}</text>
+        <view class="box">
+            <text class="box-text">昵称</text>
+            <text class="box-text">{{userInfo.nickName}}</text>
         </view>
 
-        <view class="userinfo">
-            <text class="userinfo-text">性别</text>
-            <text class="userinfo-text">男</text>
+        <view class="box">
+            <text class="box-text">性别</text>
+            <text class="box-text">男</text>
         </view>
 
-        <view class="userinfo" bindtap="address">
-            <text class="userinfo-text">我的收货地址</text>
-            <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+        <view class="box" bindtap="address">
+            <text class="box-text">我的收货地址</text>
+            <image class="box-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
         </view>
     </view>
 
-    <view class="userinfo" bindtap="contact">
-        <text class="userinfo-text">联系客服</text>
-        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <view class="box" bindtap="contact">
+        <text class="box-text">联系客服</text>
+        <image class="box-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
     </view>
 
-    <view class="userinfo" bindtap="help">
-        <text class="userinfo-text">帮助中心</text>
-        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <view class="box" bindtap="help">
+        <text class="box-text">帮助中心</text>
+        <image class="box-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
     </view>
 </view>
