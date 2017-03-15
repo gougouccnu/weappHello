@@ -9,6 +9,11 @@ Page({
     itemPrice: "57元",
     itemHaulage: "运费：23元"
   },
+  haulage: function() {
+    wx.navigateTo({
+      url: '../haulage/haulage'
+    })
+  },
   add: function() {
     wx.navigateTo({
       url: '../index/index'
@@ -16,7 +21,7 @@ Page({
   },
   buy: function() {
     wx.navigateTo({
-      url: '../order/order'
+      url: '../buyone/buyone'
     })
   }, 
   onLoad: function () {

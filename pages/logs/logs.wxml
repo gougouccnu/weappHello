@@ -11,8 +11,9 @@
         <text class="text-haulage">{{itemHaulage}}</text>
   </view>
 
-  <view class="container-foot">
-    <button bindtap="add">加入购物车</button>
-    <button bindtap="buy">立即购买</button>
+  <view class="container-bottom">
+    <view class="haulage-btn" bindtap="haulage">购物车</view>
+    <view class="add-btn" bindtap="add">加入购物车</view>
+    <view class="buy-btn" bindtap="buy">立即购买</view>
   </view>
 </view>

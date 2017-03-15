@@ -25,7 +25,27 @@
   display: flex;
 }
 
-.container-foot {
+.container-bottom {
   display: flex;
   flex-direction: row;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 80rpx;
 }
+
+.haulage-btn {
+  flex: 1;
+}
+
+.add-btn {
+  flex: 2;
+  background-color: #353535;
+}
+
+.buy-btn {
+  flex: 2;
+  background-color: #653553;
+}
+
+
