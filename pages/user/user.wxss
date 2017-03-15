@@ -1,1 +1,26 @@
-/* pages/user/user.wxss */
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 64rpx;
+  height: 64rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-text {
+  flex: 1;
+  margin: 20rpx;
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+  text-align: left;
+  font-size: 30rpx;
+  align-items: left;
+}

@@ -7,7 +7,7 @@ Page({
     userInfo: {}
   },
   //事件处理函数
-  bindViewTap1: function() {
+  bindViewTap: function() {
     wx.setStorageSync('selectedItemIndex', '1')
     wx.navigateTo({
       url: '../logs/logs'

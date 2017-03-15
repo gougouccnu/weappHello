@@ -1,51 +1,18 @@
 <!--index.wxml-->
 <view class="container">
-  <view  bindtap="bindViewTap1" class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view id="1" bindtap="bindViewTap" class="item">
+    <image class="item-img" src="../../resources/pic/2.jpg" background-size="cover"></image>
+    <text class="item-text">麻辣烤兔</text>
   </view>
 
-  <view  bindtap="bindViewTap2" class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view id="2" bindtap="bindViewTap" class="item">
+    <image class="item-img" src="../../resources/pic/2.jpg" background-size="cover"></image>
+    <text class="item-text">麻辣烤兔</text>
   </view>
 
-  <view  bindtap="bindViewTap3" class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  <view id="3" bindtap="bindViewTap" class="item">
+    <image class="item-img" src="../../resources/pic/2.jpg" background-size="cover"></image>
+    <text class="item-text">麻辣烤兔</text>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
-
-  <!--view class="page-body">
-    <view class="page-section">
-      <view class="page-section-title">
-        <text>Vertical Scroll\n纵向滚动</text>
-      </view>
-      <view class="page-section-spacing">
-        <scroll-view scroll-y="true" style="height: 600rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
-
-          <view  bindtap="bindViewTap" class="userinfo">
-            <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-            <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-
-            <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-            <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-
-            <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-            <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-          </view>
-
-        </scroll-view>
-      </view>
-    </view>
-  </view-->
 
 </view>
