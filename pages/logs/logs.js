@@ -4,6 +4,7 @@ var selectedItemIndex
 Page({
   data: {
     logs: [],
+    itemsToBuy: [],
     selectedItemPicUrl: "../../resources/pic/2.jpg",
     itemTitle: "香辣烤兔，拍后请联系卖家修改邮费",
     itemPrice: "57元",
@@ -15,9 +16,11 @@ Page({
     })
   },
   add: function() {
-    wx.navigateTo({
-      url: '../index/index'
-    })
+    var oldItems = wx.getStorageSync('itemsToBuy') || [];
+    var newItem = {"id": 0, "name": "麻辣味", "price": 22.5, "count": 2};
+    oldItems.push(newItem);
+    wx.setStorageSync('itemsToBuy', oldItems);
+    console.log(wx.getStorageSync('itemsToBuy'));
   },
   buy: function() {
     wx.navigateTo({
