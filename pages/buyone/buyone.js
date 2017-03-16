@@ -1,19 +1,39 @@
-// pages/buyone/buyone.js
+//获取应用实例
+var app = getApp()
+var contactsArray = [{"name": 'lishaowei', "phone": '18926418053',
+               "address": 'wuhan city'},
+            {"name": 'jinli', "phone": '18926418053',
+               "address": 'wuhan city'}]
 Page({
-  data:{},
-  onLoad:function(options){
-    // 页面初始化 options为页面跳转所带来的参数
+  data: {
+    contacts: {"name": 'lishaowei', "phone": '18926418053',
+               "address": 'wuhan city'},
+    userInfo: {}
   },
-  onReady:function(){
-    // 页面渲染完成
+  //事件处理函数
+  contacts: function() {
+    wx.setStorageSync('selectedItemIndex', '1')
+    wx.navigateTo({
+      url: '../logs/logs'
+    })
   },
-  onShow:function(){
-    // 页面显示
+  onLoad: function () {
+    console.log('onLoad')
+    // this值在方法的函数内指向Page，一般用that变量首先捕获this added by lsw
+    var that = this
+    //调用应用实例的方法获取全局数据
+    app.getUserInfo(function(userInfo){
+      //更新数据
+      that.setData({
+        contacts:contactsArray[1]
+      })
+    })
   },
-  onHide:function(){
-    // 页面隐藏
-  },
-  onUnload:function(){
-    // 页面关闭
+  // added by lsw 
+  onShareAppMessage: function() {
+    return {
+      title: 'custom share title',
+      path: '/pages/index/index'
+    }
   }
 })

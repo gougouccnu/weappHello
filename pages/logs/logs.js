@@ -34,5 +34,6 @@ Page({
       }),
       selectedItemPicUrl: "../../resources/pic/" + selectedItemIndex + ".jpg"
     })
+    console.log(logs)
   }   
 })
