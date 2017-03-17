@@ -1,28 +1,71 @@
 <!--pages/buyone/buyone.wxml-->
 <view class="container">
 
-<view class="address-box" bindtap="contacts">
-    <view class="">
-        <text class="text-right">{{contacts.name}}</text>
-        <text class="text-right">{{contacts.phone}}</text>
+<view class="zan-panel">
+    <view class="zan-cell zan-cell--access">
+      <view class="zan-cell__bd">{{contacts.name}}</view>
+      <view class="zan-cell__ft">{{contacts.phone}}</view>
     </view>
-    <text class="text-right">{{contacts.address}}</text>
+    <view class="zan-cell">
+      <view class="zan-cell__bd">{{contacts.address}}</view>
+    </view>
 </view>
 
-<view class="box">
-        <text class="box-text">在线支付</text>
-        <image class="box-arrow"src="src"></image>>
-</view>
+  <view class="zan-panel">
+    <view class="zan-cell">
+      <view class="zan-cell__bd">王妈烤兔</view>
+    </view>
+  </view>
 
-<view class="box">
-        <text class="box-text">优惠券</text>
-        <text class="text-right">暂无可用优惠券</text>
-</view>
+  <view class="zan-panel">
+    <view class="zan-card">
+      <view class="zan-card__thumb">
+        <image class="zan-card__img"
+          src="https://img.yzcdn.cn/upload_files/2016/11/25/FpqPXlrMRjKwJs8VdTu3ZDJCj4j5.jpeg?imageView2/2/w/200/h/200/q/90/format/jpeg"
+          mode="aspectFit"
+        ></image>
+      </view>
+      <view class="zan-card__detail">
+        <view class="zan-card__detail-row">
+          <view class="zan-card__right-col">¥ 999.99</view>
+          <view class="zan-card__left-col zan-ellipsis--l2">
+             红烧牛肉【虚拟商品】【有库存】【有sku】
+          </view>
+        </view>
+
+        <view class="zan-card__detail-row zan-c-gray-darker">
+          <view class="zan-card__right-col">x2</view>
+          <view class="zan-card__left-col">
+            3000克 50%
+          </view>
+        </view>
+
+        <view class="zan-card__detail-row zan-c-gray-darker">
+          <view class="zan-card__left-col zan-c-red">已发货</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="zan-panel">
+    <view class="zan-cell">
+      <view class="zan-cell__bd">配送方式</view>
+      <view class="zan-cell__ft">顺丰快递</view>
+    </view>
+    <view class="zan-cell">
+      <view class="zan-cell__bd">买家留言:</view>
+      <view class="zan-cell__ft">快点发货啊</view>
+    </view>
+    <view class="zan-cell">
+      <view class="zan-cell__bd">合计</view>
+      <view class="zan-cell__ft zan-c-red">￥69元</view>
+    </view>
+  </view>
 
 <view class="container-bottom">
     <view class="check-btn" bindtap="check">去付款</view>
-    <text class="text-default" >80元</text>
-    <text class="text-default">应付总额</text>
+    <text class="text-default" >￥69元</text>
+    <text class="text-default zan-c-red">应付总额</text>
 </view>
 
 </view>
