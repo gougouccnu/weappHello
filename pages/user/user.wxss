@@ -24,3 +24,8 @@
   font-size: 30rpx;
   align-items: left;
 }
+
+.avatar-size{
+  width: 64rpx;
+  height: 64rpx;
+}
