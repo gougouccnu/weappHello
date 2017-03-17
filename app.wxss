@@ -17,3 +17,11 @@
   min-height: 100vh;
   box-sizing: border-box;
 }
+
+.container-row {
+  flex-direction: row;
+}
+
+.margin-left {
+  margin-left: 20rpx;
+}
