@@ -6,13 +6,52 @@ Page({
   data: {
     motto: 'Hello World!!',
     userInfo: {},
-    ifCheckedAll: true
+    ifCheckedAll: true,
+    orderList: [
+      {
+        id: '0',
+        name: '麻辣味',
+        checked: false,
+        price: 67,
+        amount: 1,
+        pictureUrl: '../../resources/pic/2.jpg'
+      }, {
+        id: '1',
+        name: '香辣味',
+        checked: true,
+        price: 67,
+        amount: 2,
+        pictureUrl: '../../resources/pic/1.jpg'
+      }
+    ]
   },
   //事件处理函数
   checkedAll: function() {
     ifCheckedAll = ! ifCheckedAll;
     this.setData({
       ifCheckedAll: ifCheckedAll
+    })
+  },
+  orderItemCheck: function() {
+    
+    this.setData({
+      orderList: [
+      {
+        id: '0',
+        name: '麻辣味',
+        checked: true,
+        price: 67,
+        amount: 1,
+        pictureUrl: '../../resources/pic/2.jpg'
+      }, {
+        id: '1',
+        name: '香辣味',
+        checked: true,
+        price: 67,
+        amount: 2,
+        pictureUrl: '../../resources/pic/1.jpg'
+      }
+    ]
     })
   },
   onLoad: function () {
