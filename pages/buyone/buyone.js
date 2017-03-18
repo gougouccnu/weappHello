@@ -1,4 +1,6 @@
 //获取应用实例
+var Zan = require('../../zanui-weapp/dist/index');
+
 var Bmob = require('../../utils/bmob.js');
 var app = getApp();
 var contactsArray = [{"name": 'lishaowei', "phone": '18926418053',
@@ -7,12 +9,36 @@ var contactsArray = [{"name": 'lishaowei', "phone": '18926418053',
                "address": 'wuhan city'}];
 var orderList = [];
 
-Page({
+Page(Object.assign({}, Zan.Quantity, {
   data: {
     contacts: {"name": 'lishaowei', "phone": '18926418053',
                "address": 'wuhan city'},
     userInfo: {},
-    orderList: []
+    orderList: [],
+    quantity1: {
+      quantity: 10,
+      min: 1,
+      max: 20
+    },
+    quantity2: {
+      quantity: 1,
+      min: 1,
+      max: 1
+    },
+    quantity3: {
+      quantity: 10,
+      min: 1,
+      max: 20
+    }
+  },
+  handleZanQuantityChange(e) {
+    var componentId = e.componentId;
+    var quantity = e.quantity;
+    console.log('quantity clicked');
+    console.log(e);
+    this.setData({
+      [`${componentId}.quantity`]: quantity
+    });
   },
   //事件处理函数
   check: function() {
@@ -68,4 +94,4 @@ Page({
       path: '/pages/index/index'
     }
   }
-})
+}))

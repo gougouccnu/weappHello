@@ -1,4 +1,6 @@
 <!--pages/buyone/buyone.wxml-->
+<import src="../../zanui-weapp/dist/quantity/index.wxml" />
+
 <view class="container">
 
 <view class="zan-panel">
@@ -33,7 +35,10 @@
         </view>
 
         <view class="zan-card__detail-row zan-c-gray-darker">
-          <view class="zan-card__right-col">{{item.amount}}</view>
+          <!--view style="padding: 40px 15px;background-color: #653553;">
+            <template is="zan-quantity" data="{{ ...quantity1, componentId: 'quantity1' }}" />
+          </view-->
+          <template is="zan-quantity" data="{{ ...quantity3, componentId: 'quantity3', size: 'small' }}" />
           <view class="zan-card__left-col">
             3000克 50%
           </view>
