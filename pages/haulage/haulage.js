@@ -64,8 +64,9 @@ Page({
   submit: function() {
     //var orderList = wx.getStorageSync('orderList');
     //console.log(orderList);
+    wx.setStorageSync('orderList', orderList)
     wx.navigateTo({
-      url: '../buyone/buyone'
+      url: '../buyone/buyone?buyone=false'
     })
   },
   onLoad: function() {

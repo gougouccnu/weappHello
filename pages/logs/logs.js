@@ -24,7 +24,7 @@ Page({
   },
   buy: function() {
     wx.navigateTo({
-      url: '../buyone/buyone'
+      url: '../buyone/buyone?buyone=true&id=1'
     })
   }, 
   onLoad: function () {
@@ -47,7 +47,7 @@ Page({
     ];
     // for debug
     wx.setStorageSync('orderList', orderList)
-    
+
     selectedItemIndex = wx.getStorageSync('selectedItemIndex')
     this.setData({
       // log数组用map函数转化格式

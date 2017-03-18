@@ -5,11 +5,14 @@ var contactsArray = [{"name": 'lishaowei', "phone": '18926418053',
                "address": 'wuhan city'},
             {"name": 'jinli', "phone": '18926418053',
                "address": 'wuhan city'}];
+var orderList = [];
+
 Page({
   data: {
     contacts: {"name": 'lishaowei', "phone": '18926418053',
                "address": 'wuhan city'},
-    userInfo: {}
+    userInfo: {},
+    orderList: []
   },
   //事件处理函数
   check: function() {
@@ -31,15 +34,30 @@ Page({
         }
       });
   },
-  onLoad: function () {
-    console.log('onLoad')
+  onLoad: function (options) {
+    console.log(options)
+    if (options.buyone == 'true') {
+      orderList = [
+      {
+        id: 0,
+        name: '麻辣味',
+        checked: true,
+        price: 67,
+        amount: 1,
+        pictureUrl: '../../resources/pic/2.jpg'
+      }
+    ];
+    } else {
+      orderList = wx.getStorageSync('orderList');
+    }
     // this值在方法的函数内指向Page，一般用that变量首先捕获this added by lsw
     var that = this
     //调用应用实例的方法获取全局数据
     app.getUserInfo(function(userInfo){
       //更新数据
       that.setData({
-        contacts:contactsArray[1]
+        contacts:contactsArray[1],
+        orderList: orderList
       })
     })
   },
