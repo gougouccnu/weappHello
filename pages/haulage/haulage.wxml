@@ -51,6 +51,8 @@
       <view class="zan-icon {{ifCheckedAll ? 'zan-icon-checked' : 'zan-icon-check'}}" bindtap="checkedAll" style="font-size: 20px; color: #ff4343;">
       </view>
       <view class="zan-cell__bd" style="margin-left: 20rpx;">全选</view>
+      <view class="zan-cell__bd" style="margin-left: 20rpx;">{{totalPrice}}</view>
+      <button class="zan-btn zan-btn--large zan-btn--primary" bindtap="submit">提交订单</button>
     </view>
   </view>
 

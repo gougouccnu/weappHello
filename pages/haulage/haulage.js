@@ -4,48 +4,73 @@ var app = getApp();
 //是否全选
 var ifCheckedAll = true;
 var orderList;
+var totalPrice;
+
+function caculateTotalPrice(orderList) {
+  var totalPrice = 0;
+    var i, item;
+    for (i=0; i < orderList.length; i++) {
+      item = orderList[i];
+      if (item["checked"]) {
+        totalPrice += item["price"] * item["amount"];
+        console.log(totalPrice);
+      }
+    }
+    return totalPrice;
+}
+
+function setAllItemChecked(orderList) {
+  var i, item;
+    for (i=0; i < orderList.length; i++) {
+      item = orderList[i];
+      if (!item["checked"]) {
+        item["checked"] = true;
+      }
+    }
+}
 
 Page({
   data: {
     motto: 'Hello World!!',
     userInfo: {},
     ifCheckedAll: true,
-    orderList: []
+    orderList: [],
+    totalPrice: 100
   },
   //事件处理函数
   checkedAll: function() {
     ifCheckedAll = ! ifCheckedAll;
+    if (ifCheckedAll) {
+      setAllItemChecked(orderList);
+      totalPrice = caculateTotalPrice(orderList);
+    } else {
+      totalPrice = 0;
+    }
     this.setData({
-      ifCheckedAll: ifCheckedAll
+      ifCheckedAll: ifCheckedAll,
+      totalPrice: totalPrice
     })
   },
   orderItemCheck: function(event) {
     var checkItemId = parseInt(event.target.id);
     console.log(checkItemId);
     orderList[checkItemId]["checked"] = ! orderList[checkItemId]["checked"];
+    totalPrice = caculateTotalPrice(orderList);
     this.setData({
-      orderList: orderList
+      orderList: orderList,
+      totalPrice: totalPrice
     })
   },
-  onLoad: function () {
+  submit: function() {
+    //var orderList = wx.getStorageSync('orderList');
+    //console.log(orderList);
+    wx.navigateTo({
+      url: '../buyone/buyone'
+    })
+  },
+  onLoad: function() {
     console.log('onLoad')
-    orderList = [
-      {
-        id: 0,
-        name: '麻辣味',
-        checked: true,
-        price: 67,
-        amount: 1,
-        pictureUrl: '../../resources/pic/2.jpg'
-      }, {
-        id: 1,
-        name: '香辣味',
-        checked: true,
-        price: 67,
-        amount: 2,
-        pictureUrl: '../../resources/pic/1.jpg'
-      }
-    ];
+    orderList = wx.getStorageSync('orderList');
     this.setData({
       orderList: orderList
     })

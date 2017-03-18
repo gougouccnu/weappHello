@@ -28,6 +28,26 @@ Page({
     })
   }, 
   onLoad: function () {
+    var orderList = [
+      {
+        id: 0,
+        name: '麻辣味',
+        checked: true,
+        price: 67,
+        amount: 1,
+        pictureUrl: '../../resources/pic/2.jpg'
+      }, {
+        id: 1,
+        name: '香辣味',
+        checked: true,
+        price: 67,
+        amount: 2,
+        pictureUrl: '../../resources/pic/1.jpg'
+      }
+    ];
+    // for debug
+    wx.setStorageSync('orderList', orderList)
+    
     selectedItemIndex = wx.getStorageSync('selectedItemIndex')
     this.setData({
       // log数组用map函数转化格式
