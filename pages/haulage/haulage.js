@@ -1,29 +1,16 @@
 //index.js
 //获取应用实例
 var app = getApp();
+//是否全选
 var ifCheckedAll = true;
+var orderList;
+
 Page({
   data: {
     motto: 'Hello World!!',
     userInfo: {},
     ifCheckedAll: true,
-    orderList: [
-      {
-        id: '0',
-        name: '麻辣味',
-        checked: false,
-        price: 67,
-        amount: 1,
-        pictureUrl: '../../resources/pic/2.jpg'
-      }, {
-        id: '1',
-        name: '香辣味',
-        checked: true,
-        price: 67,
-        amount: 2,
-        pictureUrl: '../../resources/pic/1.jpg'
-      }
-    ]
+    orderList: []
   },
   //事件处理函数
   checkedAll: function() {
@@ -32,30 +19,36 @@ Page({
       ifCheckedAll: ifCheckedAll
     })
   },
-  orderItemCheck: function() {
-    
+  orderItemCheck: function(event) {
+    var checkItemId = parseInt(event.target.id);
+    console.log(checkItemId);
+    orderList[checkItemId]["checked"] = ! orderList[checkItemId]["checked"];
     this.setData({
-      orderList: [
+      orderList: orderList
+    })
+  },
+  onLoad: function () {
+    console.log('onLoad')
+    orderList = [
       {
-        id: '0',
+        id: 0,
         name: '麻辣味',
         checked: true,
         price: 67,
         amount: 1,
         pictureUrl: '../../resources/pic/2.jpg'
       }, {
-        id: '1',
+        id: 1,
         name: '香辣味',
         checked: true,
         price: 67,
         amount: 2,
         pictureUrl: '../../resources/pic/1.jpg'
       }
-    ]
+    ];
+    this.setData({
+      orderList: orderList
     })
-  },
-  onLoad: function () {
-    console.log('onLoad')
     // this值在方法的函数内指向Page，一般用that变量首先捕获this added by lsw
     var that = this
     //调用应用实例的方法获取全局数据

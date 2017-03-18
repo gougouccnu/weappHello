@@ -15,7 +15,7 @@
       <icon class="icon-small" type="success" size="23"></icon>
     </view-->
 
-    <view class="zan-icon {{ifCheckedAll && item.checked ? 'zan-icon-checked' : 'zan-icon-check'}}" bindtap="orderItemCheck" style="font-size: 20px; color: #ff4343;">
+    <view class="zan-icon {{ifCheckedAll && item.checked ? 'zan-icon-checked' : 'zan-icon-check'}}" bindtap="orderItemCheck" id="{{item.id}}" style="font-size: 20px; color: #ff4343;">
     </view>
 
     <view class="zan-card zan-cell_bd">
