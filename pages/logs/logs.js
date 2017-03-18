@@ -1,7 +1,8 @@
 //logs.js
+var Zan = require('../../zanui-weapp/dist/index');
 var util = require('../../utils/util.js')
 var selectedItemIndex
-Page({
+Page(Object.assign({}, Zan.Toast,{
   data: {
     logs: [],
     itemsToBuy: [],
@@ -9,6 +10,9 @@ Page({
     itemTitle: "香辣烤兔，拍后请联系卖家修改邮费",
     itemPrice: "57元",
     itemHaulage: "运费：23元"
+  },
+  showToast() {
+    this.showZanToast('已加入购物车');
   },
   haulage: function() {
     wx.navigateTo({
@@ -21,6 +25,11 @@ Page({
     oldItems.push(newItem);
     wx.setStorageSync('itemsToBuy', oldItems);
     console.log(wx.getStorageSync('itemsToBuy'));
+    wx.showToast({
+      title: '已加入购物车',
+      icon: 'success',
+      duration: 2000
+    })
   },
   buy: function() {
     wx.navigateTo({
@@ -59,4 +68,4 @@ Page({
     })
     console.log(logs)
   }   
-})
+}))

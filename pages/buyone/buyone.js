@@ -9,7 +9,7 @@ var contactsArray = [{"name": 'lishaowei', "phone": '18926418053',
                "address": 'wuhan city'}];
 var orderList = [];
 
-Page(Object.assign({}, Zan.Quantity, {
+Page(Object.assign({}, Zan.Quantity, Zan.Toast,{
   data: {
     contacts: {"name": 'lishaowei', "phone": '18926418053',
                "address": 'wuhan city'},
@@ -31,6 +31,9 @@ Page(Object.assign({}, Zan.Quantity, {
       max: 20
     }
   },
+  showToast() {
+    this.showZanToast('微信支付');
+  },
   handleZanQuantityChange(e) {
     var componentId = e.componentId;
     var quantity = e.quantity;
@@ -42,7 +45,8 @@ Page(Object.assign({}, Zan.Quantity, {
   },
   //事件处理函数
   check: function() {
-    wx.setStorageSync('selectedItemIndex', '1')
+      var that = this;
+      wx.setStorageSync('selectedItemIndex', '1')
       var Diary = Bmob.Object.extend("diary");
       var diary = new Diary();
       diary.set("title","hello");
@@ -52,11 +56,20 @@ Page(Object.assign({}, Zan.Quantity, {
         success: function(result) {
           // 添加成功，返回成功之后的objectId（注意：返回的属性名字是id，不是objectId），你还可以在Bmob的Web管理后台看到对应的数据
             console.log("日记创建成功, objectId:"+result.id);
+            wx.showToast({
+              title: '订单数据上传成功',
+              icon: 'success',
+              duration: 2000
+            })
         },
         error: function(result, error) {
           // 添加失败
           console.log('创建日记失败');
-
+          wx.showToast({
+              title: '订单数据上传失败',
+              icon: 'success',
+              duration: 2000
+            })
         }
       });
   },

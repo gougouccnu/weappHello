@@ -1,6 +1,6 @@
 <!--pages/buyone/buyone.wxml-->
 <import src="../../zanui-weapp/dist/quantity/index.wxml" />
-
+<import src="../../zanui-weapp/dist/toast/index.wxml" />
 <view class="container">
 
 <view class="zan-panel">
@@ -66,6 +66,8 @@
       <view class="zan-cell__ft zan-c-red">￥69元</view>
     </view>
   </view>
+
+  <template is="zan-toast" data="{{ zanToast }}"></template>
 
 <view class="container-bottom">
     <view class="check-btn" bindtap="check">去付款</view>

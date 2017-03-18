@@ -1,4 +1,6 @@
 <!--logs.wxml-->
+<import src="../../zanui-weapp/dist/toast/index.wxml" />
+
 <view class="log-list">
   <!--block wx:for="{{logs}}" wx:for-item="log">
     <text class="log-item">{{index + 1}}. {{log}}</text>
@@ -16,4 +18,6 @@
     <view class="add-btn" bindtap="add">加入购物车</view>
     <view class="buy-btn" bindtap="buy">立即购买</view>
   </view>
+
+  <template is="zan-toast" data="{{ zanToast }}"></template>
 </view>
