@@ -2,16 +2,18 @@
 
   <view class="zan-panel">
     <view class="zan-cell">
-      <view class="icon-small-wrp zan-cell_bd">
-        <icon class="icon-small" type="success" size="23"></icon>
+      <view class="zan-icon {{ifCheckedAll ? 'zan-icon-checked' : 'zan-icon-check'}}" bindtap="checkedAll" style="font-size: 20px; color: #ff4343;">
       </view>
       <view class="zan-cell__bd margin-left">王妈烤兔</view>
     </view>
   </view>
 
 <view class="zan-cell">
-    <view class="icon-small-wrp zan-cell_bd">
+    <!--view class="icon-small-wrp zan-cell_bd">
       <icon class="icon-small" type="success" size="23"></icon>
+    </view-->
+
+    <view class="zan-icon {{ifCheckedAll ? 'zan-icon-checked' : 'zan-icon-check'}}"  style="font-size: 20px; color: #ff4343;">
     </view>
 
     <view class="zan-card zan-cell_bd">
