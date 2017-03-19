@@ -76,16 +76,7 @@ Page(Object.assign({}, Zan.Quantity, Zan.Toast,{
   onLoad: function (options) {
     console.log(options)
     if (options.buyone == 'true') {
-      orderList = [
-      {
-        id: 0,
-        name: '麻辣味',
-        checked: true,
-        price: 67,
-        amount: 1,
-        pictureUrl: '../../resources/pic/2.jpg'
-      }
-    ];
+      orderList = app.globalItemArray[parseInt(app.requestDetailid)]
     } else {
       orderList = wx.getStorageSync('orderList');
     }

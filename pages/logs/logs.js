@@ -1,7 +1,9 @@
 //logs.js
 var Zan = require('../../zanui-weapp/dist/index');
 var util = require('../../utils/util.js')
-var selectedItemIndex
+var app = getApp();
+var selectedItemId;
+
 Page(Object.assign({}, Zan.Toast,{
   data: {
     logs: [],
@@ -20,11 +22,10 @@ Page(Object.assign({}, Zan.Toast,{
     })
   },
   add: function() {
-    var oldItems = wx.getStorageSync('itemsToBuy') || [];
-    var newItem = {"id": 0, "name": "麻辣味", "price": 22.5, "count": 2};
-    oldItems.push(newItem);
-    wx.setStorageSync('itemsToBuy', oldItems);
-    console.log(wx.getStorageSync('itemsToBuy'));
+    var orderList = wx.getStorageSync('orderList') || [];
+    orderList.push(app.globalItemArray[parseInt(selectedItemId)]);
+    wx.setStorageSync('orderList', orderList);
+    console.log(wx.getStorageSync('orderList'));
     wx.showToast({
       title: '已加入购物车',
       icon: 'success',
@@ -33,39 +34,16 @@ Page(Object.assign({}, Zan.Toast,{
   },
   buy: function() {
     wx.navigateTo({
-      url: '../buyone/buyone?buyone=true&id=1'
+      url: '../buyone/buyone?buyone=true'
     })
   }, 
-  onLoad: function () {
-    var orderList = [
-      {
-        id: 0,
-        name: '麻辣味',
-        checked: true,
-        price: 67,
-        amount: 1,
-        pictureUrl: '../../resources/pic/2.jpg'
-      }, {
-        id: 1,
-        name: '香辣味',
-        checked: true,
-        price: 67,
-        amount: 2,
-        pictureUrl: '../../resources/pic/1.jpg'
-      }
-    ];
-    // for debug
-    wx.setStorageSync('orderList', orderList)
-
-    selectedItemIndex = wx.getStorageSync('selectedItemIndex')
+  onLoad: function (options) {
+    selectedItemId = app.requestDetailid;
     this.setData({
-      // log数组用map函数转化格式
-      //console.log(wx.getStorageSync('logs')) // added by lsw
-      logs: (wx.getStorageSync('logs') || []).map(function (log) {
-        return util.formatTime(new Date(log))
-      }),
-      selectedItemPicUrl: "../../resources/pic/" + selectedItemIndex + ".jpg"
+      selectedItemPicUrl: "../../resources/pic/" + selectedItemId + ".jpg"
     })
-    console.log(logs)
+    console.log(selectedItemId);
+    console.log('restore clicked id')
+    console.log(app.requestDetailid)
   }   
 }))

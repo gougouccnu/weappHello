@@ -1,18 +1,11 @@
 <!--index.wxml-->
 <view class="container">
-  <view id="1" bindtap="bindViewTap" class="item">
-    <image class="item-img" src="../../resources/pic/2.jpg" background-size="cover"></image>
-    <text class="item-text">麻辣烤兔</text>
-  </view>
 
-  <view id="2" bindtap="bindViewTap" class="item">
-    <image class="item-img" src="../../resources/pic/2.jpg" background-size="cover"></image>
-    <text class="item-text">麻辣烤兔</text>
+<block wx:for-items="{{ itemArray }}" wx:key="{{ item.id }}">
+  <view id="{{ item.id }}" bindtap="bindViewTap" class="item">
+    <image class="item-img" src="{{ item.pictureUrl }}" background-size="cover"></image>
+    <text class="item-text">{{ item.name }}</text>
   </view>
-
-  <view id="3" bindtap="bindViewTap" class="item">
-    <image class="item-img" src="../../resources/pic/2.jpg" background-size="cover"></image>
-    <text class="item-text">麻辣烤兔</text>
-  </view>
+</block>
 
 </view>
