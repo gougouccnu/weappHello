@@ -8,15 +8,15 @@ App({
         "id": 0,
         "name": "麻辣味",
         "checked": true,
-        "price": 67,
+        "price": 50,
         "amount": 1,
         "pictureUrl": "../../resources/pic/0.jpg"
       }, {
         "id": 1,
         "name": "香辣味",
         "checked": true,
-        "price": 67,
-        "amount": 2,
+        "price": 100,
+        "amount": 1,
         "pictureUrl": "../../resources/pic/1.jpg"
       }
   ],

@@ -1,4 +1,5 @@
 //index.js
+var Zan = require('../../zanui-weapp/dist/index');
 //获取应用实例
 var app = getApp();
 //是否全选
@@ -29,13 +30,40 @@ function setAllItemChecked(orderList) {
     }
 }
 
-Page({
+Page(Object.assign({}, Zan.Quantity,{
   data: {
     motto: 'Hello World!!',
     userInfo: {},
     ifCheckedAll: true,
     orderList: [],
-    totalPrice: 100
+    totalPrice: 100,
+    quantity1: {
+      quantity: 1,
+      min: 1,
+      max: 99
+    },
+    quantity2: {
+      quantity: 1,
+      min: 1,
+      max: 1
+    },
+    quantity3: {
+      quantity: 1,
+      min: 1,
+      max: 99
+    }
+  },
+  handleZanQuantityChange(e) {
+    var componentId = e.componentId;
+    var quantity = e.quantity;
+    //重新计算总价
+    orderList[0]["amount"] = quantity;
+    console.log('quantity clicked');
+    console.log(e);
+    this.setData({
+      [`${componentId}.quantity`]: quantity,
+      totalPrice: caculateTotalPrice(orderList)
+    });
   },
   //事件处理函数
   checkedAll: function() {
@@ -93,4 +121,4 @@ Page({
       path: '/pages/index/index'
     }
   }
-})
+}))

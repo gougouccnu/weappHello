@@ -1,5 +1,6 @@
-<view class="container">
+<import src="../../zanui-weapp/dist/quantity/index.wxml" />
 
+<view class="container">
   <view class="zan-panel">
     <view class="zan-cell">
       <view class="zan-icon {{ifCheckedAll ? 'zan-icon-checked' : 'zan-icon-check'}}" bindtap="checkedAll" style="font-size: 20px; color: #ff4343;">
@@ -32,7 +33,8 @@
         </view>
 
         <view class="zan-card__detail-row zan-c-gray-darker">
-          <view class="zan-card__right-col">{{item.amount}}</view>
+          <!--view class="zan-card__right-col">{{item.amount}}</view-->
+          <template is="zan-quantity" data="{{ ...quantity3, componentId: 'quantity' + '3', size: 'small' }}" />
           <view class="zan-card__left-col">
             3000克 50%
           </view>

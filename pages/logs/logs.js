@@ -9,9 +9,9 @@ Page(Object.assign({}, Zan.Toast,{
     logs: [],
     itemsToBuy: [],
     selectedItemPicUrl: "../../resources/pic/0.jpg",
-    itemTitle: "香辣烤兔，拍后请联系卖家修改邮费",
-    itemPrice: "57元",
-    itemHaulage: "运费：23元"
+    itemTitle: '',
+    itemPrice: '',
+    itemHaulage: ''
   },
   showToast() {
     this.showZanToast('已加入购物车');
@@ -39,8 +39,12 @@ Page(Object.assign({}, Zan.Toast,{
   }, 
   onLoad: function (options) {
     selectedItemId = app.requestDetailid;
+    var item = app.globalItemArray[selectedItemId];
     this.setData({
-      selectedItemPicUrl: "../../resources/pic/" + selectedItemId + ".jpg"
+      selectedItemPicUrl: "../../resources/pic/" + selectedItemId + ".jpg",
+      itemTitle: item["name"],
+      itemPrice: '单价：￥' + item["price"] + '元',
+      itemHaulage: '运费：￥15元' 
     })
     console.log(selectedItemId);
     console.log('restore clicked id')

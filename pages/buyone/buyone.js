@@ -9,16 +9,30 @@ var contactsArray = [{"name": 'lishaowei', "phone": '18926418053',
                "address": 'wuhan city'}];
 var orderList = [];
 
+function caculateTotalPrice(orderList) {
+  var totalPrice = 0;
+    var i, item;
+    for (i=0; i < orderList.length; i++) {
+      item = orderList[i];
+      if (item["checked"]) {
+        totalPrice += item["price"] * item["amount"];
+        console.log(totalPrice);
+      }
+    }
+    return totalPrice;
+}
+
 Page(Object.assign({}, Zan.Quantity, Zan.Toast,{
   data: {
     contacts: {"name": 'lishaowei', "phone": '18926418053',
                "address": 'wuhan city'},
+    totalPrice: 0,
     userInfo: {},
     orderList: [],
     quantity1: {
-      quantity: 10,
+      quantity: 1,
       min: 1,
-      max: 20
+      max: 99
     },
     quantity2: {
       quantity: 1,
@@ -26,21 +40,25 @@ Page(Object.assign({}, Zan.Quantity, Zan.Toast,{
       max: 1
     },
     quantity3: {
-      quantity: 10,
+      quantity: 1,
       min: 1,
-      max: 20
+      max: 99
     }
   },
   showToast() {
     this.showZanToast('微信支付');
   },
+  //TODO: 订单确认页面不需要再修改数量，要去掉
   handleZanQuantityChange(e) {
     var componentId = e.componentId;
     var quantity = e.quantity;
+    //重新计算总价
+    orderList[0]["amount"] = quantity;
     console.log('quantity clicked');
     console.log(e);
     this.setData({
-      [`${componentId}.quantity`]: quantity
+      [`${componentId}.quantity`]: quantity,
+      totalPrice: caculateTotalPrice(orderList)
     });
   },
   //事件处理函数
@@ -89,7 +107,8 @@ Page(Object.assign({}, Zan.Quantity, Zan.Toast,{
       //更新数据
       that.setData({
         contacts:contactsArray[1],
-        orderList: orderList
+        orderList: orderList,
+        totalPrice: caculateTotalPrice(orderList)
       })
     })
   },

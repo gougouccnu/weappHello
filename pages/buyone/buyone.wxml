@@ -63,7 +63,7 @@
     </view>
     <view class="zan-cell">
       <view class="zan-cell__bd">合计</view>
-      <view class="zan-cell__ft zan-c-red">￥69元</view>
+      <view class="zan-cell__ft zan-c-red">{{ totalPrice }}</view>
     </view>
   </view>
 
@@ -71,7 +71,7 @@
 
 <view class="container-bottom">
     <view class="check-btn" bindtap="check">去付款</view>
-    <text class="text-default zan-c-red">￥69元</text>
+    <text class="text-default zan-c-red">{{ totalPrice }}</text>
     <text class="text-default">应付总额</text>
 </view>
 
