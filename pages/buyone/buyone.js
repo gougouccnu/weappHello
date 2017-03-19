@@ -76,8 +76,10 @@ Page(Object.assign({}, Zan.Quantity, Zan.Toast,{
   onLoad: function (options) {
     console.log(options)
     if (options.buyone == 'true') {
-      orderList = app.globalItemArray[parseInt(app.requestDetailid)]
+      console.log('buy one');
+      orderList.push(app.globalItemArray[parseInt(app.requestDetailid)])
     } else {
+      console.log('buy from haulage');
       orderList = wx.getStorageSync('orderList');
     }
     // this值在方法的函数内指向Page，一般用that变量首先捕获this added by lsw
