@@ -45,9 +45,24 @@ Page(Object.assign({}, Zan.Quantity,{
     quantity2: {
       quantity: 1,
       min: 1,
-      max: 1
+      max: 99
     },
     quantity3: {
+      quantity: 1,
+      min: 1,
+      max: 99
+    },
+    quantity4: {
+      quantity: 1,
+      min: 1,
+      max: 99
+    },
+    quantity5: {
+      quantity: 1,
+      min: 1,
+      max: 99
+    },
+    quantity0: {
       quantity: 1,
       min: 1,
       max: 99

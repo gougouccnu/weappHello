@@ -10,7 +10,7 @@
   </view>
 
 
-<block wx:for-items="{{orderList}}" wx:key="{{item.id}}">
+<block wx:for-items="{{orderList}}" wx:key="*this">
 <view class="zan-cell">
     <!--view class="icon-small-wrp zan-cell_bd">
       <icon class="icon-small" type="success" size="23"></icon>
@@ -34,7 +34,7 @@
 
         <view class="zan-card__detail-row zan-c-gray-darker">
           <!--view class="zan-card__right-col">{{item.amount}}</view-->
-          <template is="zan-quantity" data="{{ ...quantity3, componentId: 'quantity' + '3', size: 'small' }}" />
+          <template is="zan-quantity" data="{{ ...quantity5, componentId: 'quantity' + index, size: 'small' }}" />
           <view class="zan-card__left-col">
             3000克 50%
           </view>
