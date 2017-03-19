@@ -2,7 +2,7 @@
 //获取应用实例
 var app = getApp();
 //是否全选
-var ifCheckedAll = true;
+var ifCheckedAll;
 var orderList;
 var totalPrice;
 
@@ -70,6 +70,7 @@ Page({
     })
   },
   onLoad: function() {
+    ifCheckedAll = true;
     console.log('onLoad')
     orderList = wx.getStorageSync('orderList');
     this.setData({

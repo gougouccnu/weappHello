@@ -8,7 +8,7 @@ Page(Object.assign({}, Zan.Toast,{
   data: {
     logs: [],
     itemsToBuy: [],
-    selectedItemPicUrl: "../../resources/pic/2.jpg",
+    selectedItemPicUrl: "../../resources/pic/0.jpg",
     itemTitle: "香辣烤兔，拍后请联系卖家修改邮费",
     itemPrice: "57元",
     itemHaulage: "运费：23元"
