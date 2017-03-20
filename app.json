@@ -5,7 +5,8 @@
     "pages/order/order",
     "pages/user/user",
     "pages/haulage/haulage",
-    "pages/buyone/buyone"
+    "pages/buyone/buyone",
+    "pages/contacts/contacts"
   ],
   "window": {
     "navigationBarTitleText": "Demo"

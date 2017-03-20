@@ -95,7 +95,9 @@ Page(Object.assign({}, Zan.Quantity, Zan.Toast,{
     console.log(options)
     if (options.buyone == 'true') {
       console.log('buy one');
-      orderList.push(app.globalItemArray[parseInt(app.requestDetailid)])
+      var orderTmp = [];
+      orderTmp.push(app.globalItemArray[parseInt(app.requestDetailid)]);
+      orderList = orderTmp;
     } else {
       console.log('buy from haulage');
       orderList = wx.getStorageSync('orderList');
@@ -110,6 +112,11 @@ Page(Object.assign({}, Zan.Quantity, Zan.Toast,{
         orderList: orderList,
         totalPrice: caculateTotalPrice(orderList)
       })
+    })
+  },
+  addContacts: function() {
+    wx.navigateTo({
+      url: '../contacts/contacts'
     })
   },
   // added by lsw 

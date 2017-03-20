@@ -3,7 +3,7 @@
 <import src="../../zanui-weapp/dist/toast/index.wxml" />
 <view class="container">
 
-<view class="zan-panel">
+<view class="zan-panel" bindtap="addContacts">
     <view class="zan-cell zan-cell--access">
       <view class="zan-cell__bd">{{contacts.name}}</view>
       <view class="zan-cell__ft">{{contacts.phone}}</view>
