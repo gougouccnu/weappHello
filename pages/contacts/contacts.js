@@ -15,6 +15,11 @@ Page({
         contactsArray: contactsArray
       })
   },
+  addContats:function(){
+    wx.navigateTo({
+      url: '../addContact/addContact'
+    })
+  },
   onReady:function(){
     // 页面渲染完成
   },
