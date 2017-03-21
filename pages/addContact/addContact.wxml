@@ -29,40 +29,6 @@
           {{ area[areaIndex] }}
         </picker>
       </view>
-      <view class="zan-form__input zan-cell__bd">
-        <picker
-          mode="selector"
-          range="{{ city[areaIndex] }}"
-          value="{{ cityIndex }}"
-          bindchange="onCityChange"
-        >
-          {{ cityRange[cityIndex] }}
-        </picker>
-      </view>
-      <view class="zan-form__input zan-cell__bd">
-        <picker
-          mode="selector"
-          range="{{ street[cityIndex] }}"
-          value="{{ streetIndex }}"
-          bindchange="onStreetChange"
-        >
-          {{ streetRange[streetIndex] }}
-        </picker>
-      </view>
-    </view>
-    <view class="zan-cell zan-form__item">
-      <text class="zan-form__title">详细地址</text>
-      <input
-        class="zan-form__input zan-cell__bd"
-        placeholder="街道门牌信息"
-      />
-    </view>
-    <view class="zan-cell zan-form__item">
-      <text class="zan-form__title">邮政编码</text>
-      <input
-        class="zan-form__input zan-cell__bd"
-        placeholder="邮政编码（选填）"
-      />
     </view>
   </view>
 
