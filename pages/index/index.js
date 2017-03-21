@@ -21,6 +21,12 @@ Page({
   },
   onLoad: function () {
     console.log('onLoad')
+    var addressJson = require('../common/address3.js');
+    var address3Json = addressJson.address3();
+    for(var key in address3Json["河北省"]) {
+      console.log(key)
+    }
+    
     // this值在方法的函数内指向Page，一般用that变量首先捕获this added by lsw
     var that = this
     var itemArray = app.globalItemArray;

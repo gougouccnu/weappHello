@@ -22,11 +22,33 @@
       <view class="zan-form__input zan-cell__bd">
         <picker
           mode="selector"
-          range="{{ area }}"
+          range="{{ areaRange }}"
           value="{{ areaIndex }}"
           bindchange="onAreaChange"
         >
-          {{ area[areaIndex] }}
+          {{ areaRange[areaIndex] }}
+        </picker>
+      </view>
+
+      <view class="zan-form__input zan-cell__bd">
+        <picker
+          mode="selector"
+          range="{{ cityRange }}"
+          value="{{ cityIndex }}"
+          bindchange="onCityChange"
+        >
+          {{ cityRange[cityIndex] }}
+        </picker>
+      </view>
+
+      <view class="zan-form__input zan-cell__bd">
+        <picker
+          mode="selector"
+          range="{{ streetRange }}"
+          value="{{ streetIndex }}"
+          bindchange="onStreetChange"
+        >
+          {{ streetRange[streetIndex] }}
         </picker>
       </view>
     </view>
