@@ -1,9 +1,13 @@
 <view class="zan-panel">
   <block wx:for-items="{{ contactsArray }}" wx:key="{{ item.name }}">
-    <view class="zan-cell zan-cell--access">
-      <view class="zan-cell__bd">{{item.name}}</view>
-      <view class="zan-cell__ft">{{item.address}}</view>
-    </view>
+    
+      <view class="zan-cell-bd zan-icon {{item.ifChecked ? 'zan-icon-checked' : 'zan-icon-check'}}" id="{{ index }}" bindtap="checked" style="font-size: 20px; color: #ff4343;">
+      </view>
+      <view class="zan-cell__bd">  
+        <view class="">{{item.name}}</view>
+        <view class="">{{item.address}}</view>
+      </view>
+    
   </block>
 
   <view class="container-bottom zan-panel" bindtap="addContats">

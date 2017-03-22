@@ -73,9 +73,9 @@ Page({
   saveContact: function() {
     //var contactsArray = wx.getStorageSync('contactsArray') || [];
     var contactsArray = [{"name": 'lishaowei', "phone": '18926418053',
-               "address": 'wuhan city'},
+               "address": 'wuhan city', "ifChecked": false},
             {"name": 'jinli', "phone": '18926418053',
-               "address": 'wuhan city'}];
+               "address": 'wuhan city', "ifChecked": false}];
     //contactsArray.push({});
     wx.setStorageSync('contactsArray', contactsArray)
 

@@ -1,12 +1,30 @@
 // pages/contacts/contacts.js
+var contactsArray;
 
 Page({
   data:{
     contactsArray: []
   },
+  checked:function(event){
+    var checkItemId = parseInt(event.target.id);
+    console.log(event);
+
+    for(var i=0; i<contactsArray.length; i++) {
+      if(i == checkItemId) {
+        contactsArray[checkItemId]["ifChecked"] = true;
+      } else {
+        contactsArray[i]["ifChecked"] = false;
+      }
+    }
+
+    this.setData({
+      contactsArray: contactsArray
+    })
+    //
+  },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
-    var contactsArray = wx.getStorageSync('contactsArray') || [];
+    contactsArray = wx.getStorageSync('contactsArray') || [];
     
     this.setData({
         contactsArray: contactsArray
