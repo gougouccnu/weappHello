@@ -6,11 +6,8 @@ Page({
   },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
-    //var contactsArray = wx.getStorageSync('contactsArray') || [];
-    var contactsArray = [{"name": 'lishaowei', "phone": '18926418053',
-               "address": 'wuhan city'},
-            {"name": 'jinli', "phone": '18926418053',
-               "address": 'wuhan city'}];
+    var contactsArray = wx.getStorageSync('contactsArray') || [];
+    
     this.setData({
         contactsArray: contactsArray
       })

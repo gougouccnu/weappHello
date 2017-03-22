@@ -41,6 +41,7 @@ Page({
     console.log('area changed')
     selectedArea = area[e.detail.value];
     cityRange = getCityArray(address3Json, selectedArea);
+    cityRange.unshift('选择城市')
 
     console.log(cityRange)
     //console.log(e)
@@ -54,6 +55,7 @@ Page({
   onCityChange: function (e) {
     console.log(e)
     streetRange = address3Json[selectedArea][cityRange[e.detail.value]];
+    streetRange.unshift('选择地区')
     console.log(streetRange)
     this.setData({
       cityIndex: e.detail.value,
@@ -69,6 +71,14 @@ Page({
   },
 
   saveContact: function() {
+    //var contactsArray = wx.getStorageSync('contactsArray') || [];
+    var contactsArray = [{"name": 'lishaowei', "phone": '18926418053',
+               "address": 'wuhan city'},
+            {"name": 'jinli', "phone": '18926418053',
+               "address": 'wuhan city'}];
+    //contactsArray.push({});
+    wx.setStorageSync('contactsArray', contactsArray)
+
     wx.navigateTo({
       url: '../contacts/contacts'
     })

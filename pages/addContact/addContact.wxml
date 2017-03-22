@@ -54,8 +54,9 @@
     </view>
   </view>
 
-  <view class="zan-panel" bindtap="saveContact">
-    <button class="zan-btn zan-btn--large zan-btn--primary">保存</button>
+  <view class="zan-panel">
+    <!--button class="zan-btn zan-btn--large zan-btn--primary" bindtap="saveContact">保存</button-->
+    <view class="zan-cell__bd" bindtap="saveContact">保存</view>
   </view>
 
 </view>
