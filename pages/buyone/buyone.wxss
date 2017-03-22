@@ -32,3 +32,11 @@
   width: 300rpx;
   background-color: #653553;
 }
+
+.kind-list-item-bd {
+  height: 0;
+  overflow: hidden;
+}
+.kind-list-item-bd-show {
+  height: auto;
+}

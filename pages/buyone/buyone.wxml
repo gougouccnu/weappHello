@@ -3,13 +3,20 @@
 <import src="../../zanui-weapp/dist/toast/index.wxml" />
 <view class="container">
 
-<view class="zan-panel" bindtap="addContacts">
+<view class="zan-panel kind-list-item-bd {{hasContact ? 'kind-list-item-bd-show' : ''}}" bindtap="addContacts">
     <view class="zan-cell zan-cell--access">
       <view class="zan-cell__bd">{{contacts.name}}</view>
       <view class="zan-cell__ft">{{contacts.phone}}</view>
     </view>
     <view class="zan-cell">
       <view class="zan-cell__bd">{{contacts.address}}</view>
+    </view>
+</view>
+
+<view class="zan-panel kind-list-item-bd {{!hasContact ? 'kind-list-item-bd-show' : ''}}" bindtap="addContacts">
+    <view class="zan-cell zan-cell--access">
+      <view class="zan-cell__bd">新增收货地址</view>
+      <view class="zan-cell__ft"></view>
     </view>
 </view>
 
