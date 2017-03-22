@@ -6,6 +6,7 @@
       <input
         class="zan-form__input zan-cell__bd"
         placeholder="请输入姓名"
+        value="{{ nameInputValue }}"
       />
     </view>
     <view class="zan-cell zan-form__item">
@@ -15,6 +16,7 @@
         type="number"
         maxlength="20"
         placeholder="手机或固定电话"
+        value="{{ phoneInputValue }}"
       />
     </view>
     <view class="zan-cell zan-form__item zan-cell--last-child">
