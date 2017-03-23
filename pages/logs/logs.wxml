@@ -13,11 +13,11 @@
         <text class="text-haulage">{{itemHaulage}}</text>
   </view>
 
-  <view class="container-bottom">
-    <view class="haulage-btn" bindtap="haulage">购物车</view>
-    <view class="add-btn" bindtap="add">加入购物车</view>
-    <view class="buy-btn" bindtap="buy">立即购买</view>
-  </view>
+    <view class="container-bottom">
+      <text class="" bindtap="haulage">购物车</text>
+      <text class="" bindtap="add">加入购物车</text>
+      <view class="zan-btn zan-btn--warn" bindtap="buy">立即购买</view>
+    </view>
 
   <template is="zan-toast" data="{{ zanToast }}"></template>
 </view>

@@ -15,14 +15,16 @@
 
 <view class="zan-panel kind-list-item-bd {{!hasContact ? 'kind-list-item-bd-show' : ''}}" bindtap="addContacts">
     <view class="zan-cell zan-cell--access">
-      <view class="zan-cell__bd">新增收货地址</view>
+      <view class="zan-icon zan-icon-location" style="font-size: 40px;"></view>
+      <view class="zan-cell__bd" style="margin-left: 20rpx">新增收货地址</view>
       <view class="zan-cell__ft"></view>
     </view>
 </view>
 
   <view class="zan-panel">
     <view class="zan-cell">
-      <view class="zan-cell__bd">王妈烤兔</view>
+      <view class="zan-icon zan-icon-store" style="font-size: 20px;"></view>
+      <view class="zan-cell__bd" style="margin-left: 20rpx">王妈烤兔</view>
     </view>
   </view>
 
@@ -77,9 +79,9 @@
   <template is="zan-toast" data="{{ zanToast }}"></template>
 
 <view class="container-bottom">
-    <view class="check-btn" bindtap="check">去付款</view>
-    <text class="text-default zan-c-red">{{ totalPrice }}</text>
-    <text class="text-default">应付总额</text>
+    <view class="zan-btn zan-btn--warn">去支付</view>
+    <text class="text-default zan-c-red">￥{{ totalPrice }}</text>
+    <text class="text-default">合计</text>
 </view>
 
 </view>
